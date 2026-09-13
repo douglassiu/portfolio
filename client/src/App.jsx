@@ -1,3 +1,18 @@
+import { useEffect, useRef, useState } from 'react'
+
+import bchcImage from './assets/project-images/bchc.png'
+import cafeDecoGroupImage from './assets/project-images/cafedecogroup.png'
+import experiorAsiaImage from './assets/project-images/experiorasia.png'
+import handmadetaoImage from './assets/project-images/handmadetao.png'
+import iconOpticalImage from './assets/project-images/iconoptical.png'
+import petsheavenImage from './assets/project-images/petsheaven.png'
+import plgroupImage from './assets/project-images/plgroup.jpeg'
+import pointSImage from './assets/project-images/points.png'
+import roccoImage from './assets/project-images/rocco.png'
+import rvgToursImage from './assets/project-images/rvgtours.png'
+import shampooImage from './assets/project-images/shampoo.png'
+import shampooPosDemo from './assets/project-materials/shampoo_pos_demo.mp4'
+
 function App() {
   const skills = [
     'Web application development',
@@ -31,7 +46,7 @@ function App() {
         'Coordinated deployment of new features, updates, and fixes to ensure smooth rollout.',
         'Built and managed e-commerce solutions, including payment integration and product listing updates.',
       ],
-      tags: ['PHP', 'Ionic', 'jQuery', 'Alibaba Cloud', 'MySQL', 'JavaScript', 'CSS', 'Apache'],
+      tags: ['PHP', 'Ionic', 'GIT', 'jQuery', 'Alibaba Cloud', 'MySQL', 'JavaScript', 'CSS', 'Apache', 'Payment Gateway Integration'],
     },
   ]
 
@@ -42,12 +57,136 @@ function App() {
     'REST Apis',
   ]
 
-  const profileLinks = [
-    { name: 'Experior Asia', url: 'https://web.archive.org/web/20210730040945/https://www.experiorasia.com/' },
-    { name: '手工淘', url: 'https://handmadetao.com/education/' },
-    { name: 'Point S', url: 'https://web.archive.org/web/20250613093059/https://point-s.com.hk/' },
-    { name: 'Icon Optical', url: 'https://www.iconoptical.com/' },
+  const projects = [
+    {
+      year: '2023',
+      name: '寵之天國',
+      url: 'https://www.petsheaven.com.hk/',
+      description: 'Pet care and retail platform built to support product browsing, online ordering, and a structured ERP-backed storefront experience.',
+      tags: ['Doctrine', 'ERP'],
+      image: petsheavenImage,
+    },
+    {
+      year: '2023',
+      name: 'RVG Tours',
+      url: 'https://www.rvgtours.com.au/',
+      description: 'Travel booking website for customers to discover tours and complete reservations through a modern Flutter-powered front end and WooCommerce integration.',
+      tags: ['Flutter', 'Travel booking', 'WooCommerce'],
+      image: rvgToursImage,
+    },
+    {
+      year: '2022',
+      name: 'Cafe Deco Group',
+      url: 'https://www.cafedecogroup.com/',
+      description: 'Multi-brand hospitality platform designed to present restaurant offerings, support loyalty engagement, and connect with Eats365 for streamlined dining operations.',
+      tags: ['Django', 'Flutter','Loyalty program', 'Eats365 integration'],
+      image: cafeDecoGroupImage,
+      align: 'center',
+    },
+    {
+      year: '2021',
+      name: '手工淘',
+      url: 'https://handmadetao.com/education/',
+      description: 'Education-focused e-commerce platform that helped showcase handcrafted products while giving vendors a structured way to manage listings and sales.',
+      tags: ['E-commerce', 'Vendor platform'],
+      image: handmadetaoImage,
+    },
+    {
+      year: '2021',
+      name: 'Point S',
+      url: 'https://web.archive.org/web/20250613093059/https://point-s.com.hk/',
+      description: 'Tyre retail and customization website enabling product discovery, configurable selections, and external tire data integration for a more complete shopping experience.',
+      tags: ['E-commerce', 'Product customization', 'Tire API integration'],
+      image: pointSImage,
+    },
+    {
+      year: '2020',
+      name: 'Shampoo.hk',
+      url: shampooPosDemo,
+      description: 'Retail POS and product showcase site for a local beauty brand, focused on efficient store operations and a responsive customer-facing experience.',
+      tags: ['POS', 'jQuery'],
+      image: shampooImage,
+    },
+    {
+      year: '2019',
+      name: '樂思．躍思PP家長會',
+      url: 'https://web.archive.org/web/20210724002317/https://ppparentsclub.plgroup.hk/',
+      description: 'Parent association learning portal designed to deliver course content, support LMS workflows, and integrate ISpring materials for a seamless educational experience.',
+      tags: ['LMS', 'ISpring integration'],
+      image: plgroupImage,
+    },
+    {
+      year: '2018',
+      name: 'Icon Optical',
+      url: 'https://www.iconoptical.com/',
+      description: 'Optical retail website built to present products, support customization options, and provide a smooth ordering flow with POS-oriented workflows.',
+      tags: ['E-commerce', 'Product customization', 'POS'],
+      image: iconOpticalImage,
+    },
+    {
+      year: '2018',
+      name: '寶崇行',
+      url: 'https://www.bchc.com.hk/',
+      description: 'Corporate website refresh focused on improving responsiveness, modernizing the visual experience, and strengthening the company’s online brand presence.',
+      tags: ['Responsive', 'Revamp', 'UI'],
+      image: bchcImage,
+    },
+    {
+      year: '2018',
+      name: 'Rocco',
+      url: 'https://www.rocco.hk/',
+      description: 'Brand website revamp centered on a cleaner responsive layout and improved presentation for a retail-focused audience.',
+      tags: ['Responsive', 'Revamp', 'UI'],
+      image: roccoImage,
+      align: 'right',
+    },
+    {
+      year: '2018',
+      name: 'Experior Asia',
+      url: 'https://web.archive.org/web/20210730040945/https://www.experiorasia.com/',
+      description: 'Recruitment and corporate branding website created to showcase career opportunities and present the company’s expertise through a polished, responsive interface.',
+      tags: ['Recruitment', 'UI'],
+      image: experiorAsiaImage,
+      align: 'right',
+    },
   ]
+
+  const uniqueYears = projects.reduce((result, { year }, index) => {
+    if (!result.some((entry) => entry.year === year)) {
+      result.push({ year, firstIndex: index })
+    }
+
+    return result
+  }, [])
+
+  const projectRefs = useRef([])
+  const [activeYear, setActiveYear] = useState(projects[0]?.year ?? '')
+
+  useEffect(() => {
+    const updateActiveYear = () => {
+      const scrollThreshold = window.innerHeight * 0.45
+      let matchedYear = projects[0]?.year ?? ''
+
+      for (let index = 0; index < projects.length; index += 1) {
+        const node = projectRefs.current[index]
+        if (!node) continue
+
+        const rect = node.getBoundingClientRect()
+        if (rect.top <= scrollThreshold) {
+          matchedYear = projects[index].year
+        }
+      }
+
+      setActiveYear(matchedYear)
+    }
+
+    updateActiveYear()
+    window.addEventListener('scroll', updateActiveYear, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveYear)
+    }
+  }, [projects])
 
   return (
     <div className="portfolio-page">
@@ -101,12 +240,12 @@ function App() {
                 <span>Years of software development</span>
               </li>
               <li>
-                <strong>2</strong>
-                <span>Key professional roles</span>
+                <strong>{projects.length}</strong>
+                <span>Selected Projects</span>
               </li>
               <li>
-                <strong>4</strong>
-                <span>Profile links featured</span>
+                <strong>{workHistory.length}</strong>
+                <span>Key professional roles</span>
               </li>
             </ul>
           </div>
@@ -148,17 +287,75 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="section-shell">
-          <div className="section-heading">
-            <h2>Selected Works</h2>
-          </div>
+        <section id="projects" className="projects-layout">
+          <aside className="projects-sidebar section-shell">
+            <div className="section-heading">
+              <h2>Selected Works</h2>
+            </div>
 
-          <div className="links-grid group-list">
-            {profileLinks.map(({ name, url }) => (
-              <a key={name} className="link-card group-item" href={url} target="_blank" rel="noreferrer">
-                {name}
+            <ul className="projects-years">
+              {uniqueYears.map(({ year, firstIndex }) => (
+                <li key={year} className={activeYear === year ? 'is-active' : ''}>
+                  <a href={`#project-${year}-${firstIndex}`}>{year}</a>
+                  {activeYear === year && (
+                    <svg className="projects-year-tick" viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M2.5 8.5L5.5 11.5L13.5 3.5" />
+                    </svg>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </aside>
+
+          <div className="projects-list group-list">
+            {projects.map(({ name, url, year, description, tags, image, align }, index) => {
+              const projectImage = image
+
+              return (
+                <a
+                  key={name}
+                  id={`project-${year}-${index}`}
+                  ref={(element) => {
+                    projectRefs.current[index] = element
+                  }}
+                  className={`project-item group-item ${activeYear === year ? 'is-current' : ''}`}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {projectImage ? (
+                    <img className={`project-image ${align || 'center'}`} src={projectImage} alt={`${name} project preview`} />
+                  ) : (
+                    <div className="project-image" aria-hidden="true" />
+                  )}
+
+                  <div className="project-content">
+                  <div className="project-group">
+                    <h3 className="project-name">
+                      <span>{name}</span>
+                      <svg className="project-external-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 4h6v6M20 4l-8 8M6 8v12h12" />
+                      </svg>
+                    </h3>
+                  </div>
+
+                  <div className="project-group">
+                    <p>{description}</p>
+                  </div>
+
+                  <div className="project-group">
+                    <div className="project-tags">
+                      {tags.map((tag) => (
+                        <span key={tag} className="project-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </a>
-            ))}
+              )
+            })}
           </div>
         </section>
 
