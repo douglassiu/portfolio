@@ -12,6 +12,7 @@ import roccoImage from './assets/project-images/rocco.png'
 import rvgToursImage from './assets/project-images/rvgtours.png'
 import shampooImage from './assets/project-images/shampoo.png'
 import shampooPosDemo from './assets/project-materials/shampoo_pos_demo.mp4'
+import stfImage from './assets/project-images/stf.png'
 
 function App() {
   const workHistory = [
@@ -72,6 +73,15 @@ function App() {
       description: 'Multi-brand hospitality platform designed to present restaurant offerings, support loyalty engagement, and connect with Eats365 for streamlined dining operations.',
       tags: ['Django', 'Flutter','Loyalty program', 'Eats365 integration'],
       image: cafeDecoGroupImage,
+      align: 'center',
+    },
+    {
+      year: '2022',
+      name: 'Smart Traffic Fund',
+      url: 'https://stf.hkpc.org/',
+      description: '',
+      tags: ['Goverment Standard'],
+      image: stfImage,
       align: 'center',
     },
     {
