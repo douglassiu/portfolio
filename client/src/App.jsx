@@ -19,6 +19,7 @@ function App() {
         'Collaborated with cross-functional teams to gather requirements, improve functionality, and troubleshoot software issues.',
         'Supported software maintenance and updates to ensure stable, reliable performance.',
       ],
+      tags: ['Python', 'Flutter', 'ASP.NET', 'MSSQL', 'Doctrine', 'AWS', 'Firebase'],
     },
     {
       title: 'Programmer',
@@ -30,6 +31,7 @@ function App() {
         'Coordinated deployment of new features, updates, and fixes to ensure smooth rollout.',
         'Built and managed e-commerce solutions, including payment integration and product listing updates.',
       ],
+      tags: ['PHP', 'Ionic', 'jQuery', 'Alibaba Cloud', 'MySQL', 'JavaScript', 'CSS', 'Apache'],
     },
   ]
 
@@ -148,8 +150,7 @@ function App() {
 
         <section id="projects" className="section-shell">
           <div className="section-heading">
-            <p className="eyebrow">Projects</p>
-            <h2>Selected projects and company profiles.</h2>
+            <h2>Selected Works</h2>
           </div>
 
           <div className="links-grid group-list">
@@ -161,9 +162,8 @@ function App() {
           </div>
         </section>
 
-        <section id="experience" className="section-shell">
+        <section id="experience">
           <div className="section-heading">
-            <p className="eyebrow">Experience</p>
             <h2>Career highlights.</h2>
           </div>
 
@@ -183,6 +183,14 @@ function App() {
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
+
+                <div className="experience-tags">
+                  {role.tags.map((tag) => (
+                    <span key={tag} className="experience-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
