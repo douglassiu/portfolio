@@ -71,7 +71,7 @@ function App() {
       </header>
 
       <main className="page-content">
-        <section className="hero section-shell">
+        <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">Programmer • Web &amp; App Developer</p>
             <h1>Building reliable software experiences for modern businesses.</h1>
@@ -104,28 +104,6 @@ function App() {
                 <span>Profile links featured</span>
               </li>
             </ul>
-          </div>
-
-          <div className="hero-panel">
-            <div className="panel-card highlight-card">
-              <p className="small-label">Current focus</p>
-              <h3>Application development, database optimization, and user-centered software delivery.</h3>
-            </div>
-
-            <div className="panel-card details-card">
-              <div className="detail-row">
-                <span className="detail-label">Email</span>
-                <a href="mailto:douglassiu009@gmail.com">douglassiu009@gmail.com</a>
-              </div>
-              <div className="detail-row">
-                <span className="detail-label">Phone</span>
-                <a href="tel:+85262717339">+852 6271 7339</a>
-              </div>
-              <div className="detail-row">
-                <span className="detail-label">Education</span>
-                <span>BSc in Computer Science</span>
-              </div>
-            </div>
           </div>
         </section>
 
