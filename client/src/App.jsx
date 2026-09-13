@@ -105,6 +105,42 @@ function App() {
               </li>
             </ul>
           </div>
+
+          <div className="hero-art" aria-hidden="true">
+            <div className="paper-stack">
+              <div className="paper paper-back">
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+              </div>
+              <div className="paper paper-mid">
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+              </div>
+              <div className="paper paper-front">
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+                <span className="paper-line" />
+              </div>
+              <div className="ink-pen" />
+            </div>
+          </div>
         </section>
 
         <section id="about" className="section-shell about-section">

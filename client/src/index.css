@@ -185,6 +185,102 @@ a {
   min-width: 0;
 }
 
+.hero-art {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper-stack {
+  position: relative;
+  width: min(100%, 380px);
+  height: 360px;
+  filter: drop-shadow(0 22px 24px rgba(31, 45, 61, 0.12));
+}
+
+.paper {
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 250px;
+  height: 300px;
+  border: 1px solid rgba(31, 45, 61, 0.1);
+  background: rgba(255,255,255,1);
+  box-shadow: 0 12px 20px rgba(31, 45, 61, 0.08);
+}
+
+.paper-line {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: rgba(31, 45, 61, 0.14);
+  border-radius: 999px;
+}
+
+.paper-line:nth-child(1) { top: 40px; }
+.paper-line:nth-child(2) { top: 72px; }
+.paper-line:nth-child(3) { top: 104px; }
+.paper-line:nth-child(4) { top: 136px; }
+.paper-line:nth-child(5) { top: 168px; }
+.paper-line:nth-child(6) { top: 200px; }
+.paper-line:nth-child(7) { top: 232px; }
+.paper-line:nth-child(8) { top: 264px; }
+
+.paper-back {
+  left: 12px;
+  top: 32px;
+  transform: rotate(-16deg);
+}
+
+.paper-mid {
+  left: 56px;
+  top: 18px;
+  transform: rotate(-6deg);
+}
+
+.paper-front {
+  left: 98px;
+  top: 0;
+  transform: rotate(8deg);
+}
+
+.ink-pen {
+  position: absolute;
+  right: 20px;
+  bottom: 26px;
+  width: 150px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1d2a35 0%, #384e60 40%, #0f1720 100%);
+  transform: rotate(-28deg);
+  box-shadow: 0 8px 16px rgba(17, 24, 39, 0.12);
+}
+
+.ink-pen::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 0;
+  width: 18px;
+  height: 12px;
+  border-radius: 6px 0 0 6px;
+  background: linear-gradient(180deg, #26384b 0%, #101820 100%);
+}
+
+.ink-pen::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 1px;
+  width: 24px;
+  height: 10px;
+  background: linear-gradient(180deg, #4a5d70 0%, #1d2a35 100%);
+  border-radius: 0 8px 8px 0;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
 .eyebrow {
   margin-bottom: 14px;
   color: #5f6d7a;
@@ -504,6 +600,10 @@ a {
 
   .contact-shell {
     justify-content: stretch;
+  }
+
+  .hero-art {
+    min-height: 320px;
   }
 }
 
