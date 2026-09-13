@@ -360,10 +360,18 @@ a {
 }
 
 .experience-item {
-  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f4 100%);
-  border: 1px solid rgba(31, 45, 61, 0.08);
   border-radius: 20px;
   padding: 24px;
+}
+
+.group-item:hover {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f4 100%);
+  border: 1px solid rgba(31, 45, 61, 0.08);
+  opacity: 1 !important;
+}
+
+.group-list:hover .group-item {
+  opacity: 0.2;
 }
 
 .experience-head {
@@ -418,8 +426,6 @@ a {
   min-height: 96px;
   padding: 18px 20px;
   border-radius: 18px;
-  background: linear-gradient(180deg, #ffffff 0%, #eff3f6 100%);
-  border: 1px solid rgba(31, 45, 61, 0.08);
   color: #1f2d3d;
   font-size: 1rem;
   font-weight: 700;

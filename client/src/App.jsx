@@ -160,9 +160,9 @@ function App() {
             <h2>Career highlights.</h2>
           </div>
 
-          <div className="experience-list">
+          <div className="experience-list group-list">
             {workHistory.map((role) => (
-              <article key={`${role.company}-${role.period}`} className="experience-item">
+              <article key={`${role.company}-${role.period}`} className="experience-item group-item">
                 <div className="experience-head">
                   <div>
                     <p className="role-label">{role.title}</p>
@@ -187,9 +187,9 @@ function App() {
             <h2>Technical strengths and core capabilities.</h2>
           </div>
 
-          <div className="skills-grid">
+          <div className="skills-grid group-list">
             {skills.map((skill) => (
-              <div key={skill} className="skill-card">
+              <div key={skill} className="skill-card group-item">
                 {skill}
               </div>
             ))}
@@ -202,9 +202,9 @@ function App() {
             <h2>Selected projects and company profiles.</h2>
           </div>
 
-          <div className="links-grid">
+          <div className="links-grid group-list">
             {profileLinks.map(({ name, url }) => (
-              <a key={name} className="link-card" href={url} target="_blank" rel="noreferrer">
+              <a key={name} className="link-card group-item" href={url} target="_blank" rel="noreferrer">
                 {name}
               </a>
             ))}
