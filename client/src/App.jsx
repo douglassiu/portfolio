@@ -34,9 +34,10 @@ function App() {
   ]
 
   const highlights = [
-    '7+ years of software development experience',
-    'Strong attention to detail and system reliability',
-    'Experience across web, mobile, and business software solutions',
+    'Full Stack',
+    'Mobile App',
+    'eCommerce',
+    'REST Apis',
   ]
 
   const profileLinks = [
@@ -49,19 +50,19 @@ function App() {
   return (
     <div className="portfolio-page">
       <header className="topbar">
-        <div className="brand">
+        <a className="brand" href="#hero">
           <div className="brand-mark">YS</div>
           <div>
             <strong>Yue Yeung SIU</strong>
             <span>Programmer</span>
           </div>
-        </div>
+        </a>
 
         <nav className="nav" aria-label="Main navigation">
-          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
-          <a href="#links">Links</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -71,7 +72,7 @@ function App() {
       </header>
 
       <main className="page-content">
-        <section className="hero">
+        <section id="hero" className="hero">
           <div className="hero-copy">
             <p className="eyebrow">Programmer • Web &amp; App Developer</p>
             <h1>Building reliable software experiences for modern businesses.</h1>
@@ -82,11 +83,13 @@ function App() {
             </p>
 
             <div className="cta-group">
+              {highlights.map((item) => (
+                <span key={item} className="secondary-button">
+                  {item}
+                </span>
+              ))}
               <a className="primary-button" href="#contact">
                 Hire Me
-              </a>
-              <a className="secondary-button" href="#experience">
-                View Experience
               </a>
             </div>
 
@@ -143,28 +146,18 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="section-shell about-section">
+        <section id="projects" className="section-shell">
           <div className="section-heading">
-            <p className="eyebrow">About</p>
-            <h2>Thoughtful developer with a practical, user-first mindset.</h2>
+            <p className="eyebrow">Projects</p>
+            <h2>Selected projects and company profiles.</h2>
           </div>
 
-          <div className="about-grid">
-            <p>
-              Experienced in building and maintaining web applications, delivering clean and
-              scalable code, and understanding end-user behavior to translate it into practical,
-              working systems. I enjoy solving real-world problems through reliable software
-              design and thoughtful implementation.
-            </p>
-
-            <div className="mini-points">
-              {highlights.map((item) => (
-                <div key={item} className="mini-point">
-                  <span className="point-dot" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="links-grid group-list">
+            {profileLinks.map(({ name, url }) => (
+              <a key={name} className="link-card group-item" href={url} target="_blank" rel="noreferrer">
+                {name}
+              </a>
+            ))}
           </div>
         </section>
 
@@ -210,18 +203,19 @@ function App() {
           </div>
         </section>
 
-        <section id="links" className="section-shell">
+        <section id="about" className="section-shell about-section">
           <div className="section-heading">
-            <p className="eyebrow">Profile links</p>
-            <h2>Selected projects and company profiles.</h2>
+            <p className="eyebrow">About</p>
+            <h2>Thoughtful developer with a practical, user-first mindset.</h2>
           </div>
 
-          <div className="links-grid group-list">
-            {profileLinks.map(({ name, url }) => (
-              <a key={name} className="link-card group-item" href={url} target="_blank" rel="noreferrer">
-                {name}
-              </a>
-            ))}
+          <div className="about-grid">
+            <p>
+              Experienced in building and maintaining web applications, delivering clean and
+              scalable code, and understanding end-user behavior to translate it into practical,
+              working systems. I enjoy solving real-world problems through reliable software
+              design and thoughtful implementation.
+            </p>
           </div>
         </section>
 
