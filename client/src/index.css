@@ -186,6 +186,7 @@ section[id] {
   align-items: center;
   height: calc(100vh - 120px);
   scroll-snap-align: end;
+  scroll-margin-top: 120px !important;
 }
 
 .hero-copy {
