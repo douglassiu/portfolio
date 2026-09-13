@@ -596,6 +596,7 @@ a {
   .contact-shell {
     grid-template-columns: 1fr;
     display: grid;
+    height: auto;
   }
 
   .contact-shell {
@@ -603,7 +604,7 @@ a {
   }
 
   .hero-art {
-    min-height: 320px;
+    display: none;
   }
 }
 
@@ -628,6 +629,10 @@ a {
 
   .stats-list {
     grid-template-columns: 1fr;
+  }
+
+  .brand-mark {
+    display: none;
   }
 
   .experience-head {
