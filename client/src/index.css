@@ -543,25 +543,6 @@ section[id] {
   box-shadow: 0 12px 24px rgba(31, 45, 61, 0.16);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.skill-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 96px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  color: #1f2d3d;
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-}
-
 #projects {
   min-height: calc(100vh - 152px);
   margin-bottom: 150px;

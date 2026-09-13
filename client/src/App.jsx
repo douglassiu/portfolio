@@ -14,15 +14,6 @@ import shampooImage from './assets/project-images/shampoo.png'
 import shampooPosDemo from './assets/project-materials/shampoo_pos_demo.mp4'
 
 function App() {
-  const skills = [
-    'Web application development',
-    'Mobile app development',
-    'RESTful APIs',
-    'Object-oriented programming',
-    'Database design and optimization',
-    'Version control and deployment',
-  ]
-
   const workHistory = [
     {
       title: 'Programmer',
@@ -202,7 +193,6 @@ function App() {
         <nav className="nav" aria-label="Main navigation">
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -389,21 +379,6 @@ function App() {
                   ))}
                 </div>
               </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="skills" className="section-shell">
-          <div className="section-heading">
-            <p className="eyebrow">Skills</p>
-            <h2>Technical strengths and core capabilities.</h2>
-          </div>
-
-          <div className="skills-grid group-list">
-            {skills.map((skill) => (
-              <div key={skill} className="skill-card group-item">
-                {skill}
-              </div>
             ))}
           </div>
         </section>
