@@ -440,7 +440,7 @@ section[id] {
 .about-grid .about-arrow::after {
   content: '';
   position: absolute;
-  left: 0;
+  right: 50%;
   top: 95%;
   width: 100px;
   height: 100px;
@@ -454,7 +454,7 @@ section[id] {
 .about-grid .about-arrow::before {
   content: '';
   position: absolute;
-  left: 59%;
+  right: 28%;
   top: calc(196%);
   width: 22px;
   height: 22px;
@@ -865,8 +865,17 @@ section[id] {
 
   .brand-mark,
   .hero-art,
+  .about-section::after,
   .about-grid .about-arrow {
     display: none;
+  }
+
+  #about {
+    min-height: auto;
+  }
+
+  .about-grid {
+    margin: 0;
   }
 }
 
@@ -942,14 +951,6 @@ section[id] {
 
   .project-group:last-child {
     margin-top: 0;
-  }
-
-  .about-section {
-    transform: none;
-  }
-
-  .about-section::after {
-    display: none;
   }
 
   .experience-head {
