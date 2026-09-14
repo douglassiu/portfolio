@@ -459,7 +459,7 @@ section[id] {
 }
 
 #experience {
-  min-height: calc(100vh - 152px);
+  min-height: calc(100vh - 21px - var(--top-bar-height));
 }
 
 .experience-list {
@@ -544,7 +544,7 @@ section[id] {
 }
 
 #projects {
-  min-height: calc(100vh - 152px);
+  min-height: calc(100vh - 21px - var(--top-bar-height));
   margin-bottom: 150px;
 }
 
@@ -736,6 +736,34 @@ section[id] {
   font-size: 0.76rem;
   font-weight: 700;
   box-shadow: 0 10px 18px rgba(31, 45, 61, 0.12);
+}
+
+#about {
+  min-height: calc(100vh - 21px - var(--top-bar-height));
+}
+
+.about-section {
+  position: relative;
+  border-radius: .25rem;
+  background: rgba(255, 255, 255, 0.86);
+  transform: rotate(1deg);
+}
+
+.about-section::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  border-radius: .25rem;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(31, 45, 61, 0.08),
+    rgba(31, 45, 61, 0.08) 1px,
+    transparent 1px,
+    transparent 53px
+  );
 }
 
 .contact-shell {

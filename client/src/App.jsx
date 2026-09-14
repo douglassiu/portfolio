@@ -396,15 +396,11 @@ function App() {
         <section id="about" className="section-shell about-section">
           <div className="section-heading">
             <p className="eyebrow">About</p>
-            <h2>Thoughtful developer with a practical, user-first mindset.</h2>
+            <h2>Me</h2>
           </div>
 
           <div className="about-grid">
             <p>
-              Experienced in building and maintaining web applications, delivering clean and
-              scalable code, and understanding end-user behavior to translate it into practical,
-              working systems. I enjoy solving real-world problems through reliable software
-              design and thoughtful implementation.
             </p>
           </div>
         </section>
