@@ -408,8 +408,8 @@ function App() {
           </div>
 
           <div className="about-grid">
-            <p>
-            </p>
+            <h1>Never trust person on the internet, contact and find out more about me.</h1>
+            <div className="about-arrow"></div>
           </div>
         </section>
 
