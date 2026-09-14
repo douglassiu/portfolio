@@ -7,6 +7,7 @@ import handmadetaoImage from './assets/project-images/handmadetao.png'
 import iconOpticalImage from './assets/project-images/iconoptical.png'
 import petsheavenImage from './assets/project-images/petsheaven.png'
 import plgroupImage from './assets/project-images/plgroup.jpeg'
+import resumePdf from './assets/resume/Resume_SIU_Yue_Yeung.pdf'
 import pointSImage from './assets/project-images/points.png'
 import roccoImage from './assets/project-images/rocco.png'
 import rvgToursImage from './assets/project-images/rvgtours.png'
@@ -333,7 +334,7 @@ function App() {
                   <div className="project-group">
                     <h3 className="project-name">
                       <span>{name}</span>
-                      <svg className="project-external-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <svg className="external-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M14 4h6v6M20 4l-8 8M6 8v12h12" />
                       </svg>
                     </h3>
@@ -391,6 +392,13 @@ function App() {
               </article>
             ))}
           </div>
+
+          <a href={resumePdf} className="resume-link" target="_blank" rel="noreferrer">
+            <span>View Full Resume</span>
+            <svg className="external-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 4h6v6M20 4l-8 8M6 8v12h12" />
+            </svg>
+          </a>
         </section>
 
         <section id="about" className="section-shell about-section">

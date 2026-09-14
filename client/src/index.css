@@ -543,6 +543,16 @@ section[id] {
   box-shadow: 0 12px 24px rgba(31, 45, 61, 0.16);
 }
 
+.resume-link {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4d5a66;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
 #projects {
   min-height: calc(100vh - 21px - var(--top-bar-height));
   margin-bottom: 150px;
@@ -702,7 +712,7 @@ section[id] {
   display: inline-block;
 }
 
-.project-external-icon {
+.external-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
