@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import bchcImage from './assets/project-images/bchc.png'
 import cafeDecoGroupImage from './assets/project-images/cafedecogroup.png'
@@ -429,6 +430,7 @@ function App() {
           </div>
         </section>
       </main>
+      <Analytics />
     </div>
   )
 }
