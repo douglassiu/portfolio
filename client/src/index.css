@@ -821,6 +821,7 @@ section[id] {
     justify-content: stretch;
   }
 
+  .brand-mark,
   .hero-art {
     display: none;
   }
@@ -828,7 +829,7 @@ section[id] {
 
 @media (max-width: 720px) {
   :root {
-    --top-bar-height: 116px;
+    --top-bar-height: 193px;
   }
 
   .portfolio-page {
@@ -843,18 +844,34 @@ section[id] {
 
   .topbar {
     padding: 16px 18px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand {
+    justify-content: center;
   }
 
   .nav {
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+
+  .nav a {
+    text-align: center;
   }
 
   .stats-list {
     grid-template-columns: 1fr;
   }
 
-  .brand-mark, .topbar .primary-button {
+  .topbar .primary-button {
     display: none;
+  }
+
+  .brand-mark {
+    display: inline-flex;
   }
 
   .projects-layout {
@@ -867,6 +884,29 @@ section[id] {
 
   .project-item {
     opacity: 1 !important;
+    flex-direction: column;
+  }
+
+  .project-image {
+    flex-basis: auto;
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .project-content {
+    padding: 16px 18px 18px;
+  }
+
+  .project-group:last-child {
+    margin-top: 0;
+  }
+
+  .about-section {
+    transform: none;
+  }
+
+  .about-section::after {
+    display: none;
   }
 
   .experience-head {
